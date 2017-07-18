@@ -70,7 +70,24 @@ body {font-family: Verdana, sans-serif;}
 }
 
 .calendar{
-	width:800px;
+	width:400px;
+	border-size:2px;
+	border-style: solid;
+	border-color: #1abc9c;
 }
+
+table{
+	width: 100%;
+}
+
+.day{
+	text-align: center;
+	vertical-align: middle;
+	height: 35px;
+}
+
+
+
+
 
 
