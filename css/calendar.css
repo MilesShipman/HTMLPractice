@@ -3,13 +3,27 @@ body {font-family: Verdana, sans-serif;}
 
 /* Month Header bitches*/
 .month{
-	padding: 70px 25px;
+	padding: 30px 25px;
 	background: #1abc9c;
 }
 
 .month ul {
 	margin: 0;
 	padding: 0;
+}
+
+ul {
+    /* Use flex boxes to align li items */
+    display: flex;
+    justify-content: space-around;
+    /* Remove default padding from major browsers */
+    padding: 0;
+    /* Hide the default decorations for li items */
+    list-style: none;
+}
+ul > li {
+    /* Display the elements in one line */
+    display: inline-block;
 }
 
 .month ul li {
@@ -58,11 +72,12 @@ body {font-family: Verdana, sans-serif;}
 	color: #777;
 }
 
-.days li .active {
+.days li {
 	padding: 5px;
 	background: #1abc9c;
 	color: white !important;
 }
+
 
 .day:hover {
 	background-color: #717171;
@@ -70,7 +85,7 @@ body {font-family: Verdana, sans-serif;}
 }
 
 .calendar{
-	width:400px;
+	width:300px;
 	border-size:2px;
 	border-style: solid;
 	border-color: #1abc9c;
@@ -78,12 +93,34 @@ body {font-family: Verdana, sans-serif;}
 
 table{
 	width: 100%;
+	table-layout: fixed;
+	border-collapse: collapse;
+	border-style: hidden;
+}
+
+table td{
+	border:2px solid;
+	border-color: #1abc9c;
+}
+
+table th{
+	border: 3px solid;
+	border-color: #1abc9c;
 }
 
 .day{
 	text-align: center;
 	vertical-align: middle;
 	height: 35px;
+}
+
+.month_year{
+	text-align: center;
+}
+
+.active{
+	color: white !important;
+	background-color: #1abc9c;
 }
 
 
