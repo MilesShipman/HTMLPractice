@@ -123,6 +123,13 @@ table th{
 	background-color: #1abc9c;
 }
 
+.next:hover{
+	color: #717171;
+}
+
+.prev:hover{
+	color: #717171;
+}
 
 
 
