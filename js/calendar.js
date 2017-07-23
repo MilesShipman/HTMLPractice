@@ -38,6 +38,7 @@ function create_calendar(){
   var days = new Date(year, date.getMonth(),0);
 
   //Create the HTML -- Month
+  //Turn this into a table it's just gonna be easier
   text = "<div class = 'month'><ul><li class='prev' onclick='prev_month();''>&#10094;</li><li class='month_year'>"+month+"<br><span style='font-size:18px'>"+year+"</span></li><li class='next' onclick='next_month()'>&#10095;</li></ul></div>"
 
   //Table Header
@@ -52,7 +53,12 @@ function create_calendar(){
   days_text = " ";
   for(i=0; i < calendarDays.length; i++){
     if( i % 7 == 0){
-      days_text = days_text + "<tr>";
+      if(i > 7 && calendarDays[i] == 0){
+        break;
+      }
+      else{
+        days_text = days_text + "<tr>";
+      }
     }
     console.log("Test");
     //add the space
