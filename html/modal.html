@@ -8,5 +8,35 @@
 
 <body>
 
+<button id="myBtn">Open Modal</button>
+
+<!-- Text Modal -->
+<div id="text_modal" class="t-modal">
+
+	<!-- Text Modal Content -->
+	<div class="t-modal-content">
+		<span class="close">&times;</span>
+		<p>Some text in the Modal..</p>
+	</div>
+
+</div>
+
+<script>
+var modal = document.getElementById("text_modal");
+
+var btn = document.getElementById("myBtn");
+
+var span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function(){
+	modal.style.display = "block";
+}
+
+span.onclick = function(){
+	modal.style.display = "none";
+}
+
+</script>
+
 </body>
 </html>
