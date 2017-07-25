@@ -21,12 +21,40 @@
 
 </div>
 
+<br><br><br>
+
+<h2>Animated Modal with Header and Footer</h2>
+
+<!-- Trigger/Open The Modal -->
+<button id="hfBtn">Open Image Modal</button>
+
+<div id="head_modal" class="hf-modal">
+
+	<div class="hf-modal-content">
+		<div class="hf-modal-header">
+	      <span class="hfclose">&times;</span>
+	      <h2>Modal Header</h2>
+	    </div>
+	    <div class="hf-modal-body">
+	      <p>Some text in the Modal Body</p>
+	      <p>Some other text...</p>
+	    </div>
+	    <div class="hf-modal-footer">
+	      <h3>Modal Footer</h3>
+	    </div>
+	</div>
+
+</div>
+
 <script>
 var modal = document.getElementById("text_modal");
+var hfmodal = document.getElementById("head_modal");
 
 var btn = document.getElementById("myBtn");
+var hfbtn = document.getElementById("hfBtn");
 
 var span = document.getElementsByClassName("close")[0];
+var hfspan = document.getElementsByClassName("hfclose")[0];
 
 btn.onclick = function(){
 	modal.style.display = "block";
@@ -36,10 +64,21 @@ span.onclick = function(){
 	modal.style.display = "none";
 }
 
+hfspan.onclick = function(){
+	hfmodal.style.display = "none";
+}
+
 window.onclick = function(event){
 	if(event.target == modal){
 		modal.style.display = "none";
 	}
+	if(event.target == hfmodal){
+		hfmodal.style.display = "none";
+	}
+}
+
+hfbtn.onclick = function() {
+    hfmodal.style.display = "block";
 }
 
 </script>
