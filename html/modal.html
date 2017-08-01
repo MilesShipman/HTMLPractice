@@ -2,12 +2,14 @@
 <html>
 
 <head>
-	<title>Calendar</title>
+	<title>Modal Test</title>
 	<link rel="stylesheet" href="../css/modal.css">
+	<link rel="stylesheet" href="../css/calendar.css">
+	<script src="../js/calendar.js" type="text/javascript"></script>
 </head>
 
 <body>
-
+<h2>Basic Model</h2>
 <button id="myBtn">Open Modal</button>
 
 <!-- Text Modal -->
@@ -46,15 +48,36 @@
 
 </div>
 
+<br><br><br>
+<h2>Calendar Modal</h2>
+
+<!--Trigger For Calendar Modal-->
+<button id="cBtn">Open Calendar</button>
+
+<div id="cal_modal" class="c_modal">
+	<div class="c-modal-content">
+		<div class="c-modal-header">
+			<span class="c-close">&times;</span>
+			<h2>Calendar</h2>
+		</div>
+		<div class="c-modal-body">
+			<div class="calendar"></div>
+		</div>
+	</div>
+</div>
+
 <script>
 var modal = document.getElementById("text_modal");
 var hfmodal = document.getElementById("head_modal");
+var cmodal = document.getElementById("cal_modal");
 
 var btn = document.getElementById("myBtn");
 var hfbtn = document.getElementById("hfBtn");
+var cbtn = document.getElementById("cBtn");
 
 var span = document.getElementsByClassName("close")[0];
 var hfspan = document.getElementsByClassName("hfclose")[0];
+var cspan = document.getElementsByClassName("c-close")[0];
 
 btn.onclick = function(){
 	modal.style.display = "block";
@@ -75,10 +98,21 @@ window.onclick = function(event){
 	if(event.target == hfmodal){
 		hfmodal.style.display = "none";
 	}
+	if(event.target == cmodal){
+		cmodal.style.display = "none";
+	}
 }
 
 hfbtn.onclick = function() {
     hfmodal.style.display = "block";
+}
+
+cspan.onclick = function(){
+	cmodal.style.display = "none";
+}
+
+cbtn.onclick = function(){
+	cmodal.style.display = "block";
 }
 
 </script>

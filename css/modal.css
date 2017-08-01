@@ -36,6 +36,8 @@
 }
 
 
+
+
 /* HF MODAL */
 .hf-modal{
 	display: none;
@@ -103,5 +105,83 @@
 
 .hf-modal-body{
 	padding: 2px 16px;
+}
+
+/*Calendar Model Testing*/
+.c_modal{
+	display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 10%;
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    -webkit-animation-name: fadeIN; /* Fade in the background */
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIN;
+    animation-duration: 0.4s
+}
+
+.c-modal-content{
+	position: relative;
+	background-color: #fefefe;
+	margin: auto;
+	padding: 0;
+	border: 1px solid #888;
+    width: 40%;
+    -webkit-animation-name: slideIN;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIN;
+    animation-duration: 0.4s
+}
+
+.c-close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.c-close:hover,
+.c-close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.c-modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.c-modal-body {
+	padding: 2px 16px;
+	background-color: #fefefe;
+}
+
+/* Add Animation */
+@-webkit-keyframes slideIN {
+    from {bottom: -300px; opacity: 0} 
+    to {bottom: 0; opacity: 1}
+}
+
+@keyframes slideIN {
+    from {bottom: -300px; opacity: 0}
+    to {bottom: 0; opacity: 1}
+}
+
+@-webkit-keyframes fadeIN {
+    from {opacity: 0} 
+    to {opacity: 1}
+}
+
+@keyframes fadeIN {
+    from {opacity: 0} 
+    to {opacity: 1}
 }
 
