@@ -12,8 +12,48 @@
 
 <img id='myImg' src="../img/img1.jpg" alt="Some Image" width="300" height="200">
 
+<!-- The Modal Aspect -->
+<div id="myModal" class="modal">
+
+<!-- The close button -->
+<span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+
+<!-- The modal content (Image) -->
+<img class="modal-content" id="img01">
+
+<!-- The modal Caption (image text) -->
+<div id="caption"></div>
+
 
 </div>
+
+</div>
+
+<script>
+//get the modal
+var modal = document.getElementById("myModal");
+
+//Get the image
+var img = document.getElementById('myImg');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+
+img.onclick = function(){
+	modal.style.display = "block";
+	modalImg.src = this.src;
+	captionText.innerHTML = this.alt;
+}
+
+//Get the spacn
+var span = document.getElementByClassName("Close")[0];
+
+//When user cicks on the span close the modal
+span.onclick = function(){
+	modal.style.display = "none";
+}
+
+</script>
+
 
 </body>
 </html>
