@@ -3,24 +3,40 @@
 
 <head>
 	<title>Lightbox Example</title>
-	<link rel="stylesheet" href="../css/image_modal.css">
+	<link rel="stylesheet" href="../css/lightbox.css">
 </head>
 
 <body>
 
 <div class="row">
-	<div class="column">
-		<img src="../img/img1.jpg" onclick="openModal();currentSlight(1)" class="hover-shadow">
+  <div class="column">
+    <img src="../img/img1_small.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow">
+  </div>
+  <div class="column">
+    <img src="../img/img2_small.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow">
+  </div>
+  <div class="column">
+    <img src="../img/img3_small.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow">
+  </div>
+  <div class="column">
+    <img src="../img/img4_small.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow">
+  </div>
+</div>
+
+
+<div id="myModal" class="modal">
+<span class="close cursor" onclick="closeModal()">&times;</span>
+<div class="modal-content">
+
+	<div class="mySlides">
+		<div class="numbertext">1 / 4</div>
+        <img src="../img/img1.jpg" style="width:100%">
+    	</div>
 	</div>
-	<div class="column">
-		<img src="../img/img2.jpg" onclick="openModal();currentSlight(2)" class="hover-shadow">
-	</div>
-	<div class="column">
-		<img src="../img/img3.jpg" onclick="openModal();currentSlight(3)" class="hover-shadow">
-	</div>
-	<div class="column">
-		<img src="../img/img4.jpg" onclick="openModal();currentSlight(4)" class="hover-shadow">
-	</div>
+
+</div>
+
+
 </div>
 
 </body>
