@@ -37,7 +37,7 @@
 		<div class="numbertext">2 / 4</div>
         <img src="../img/img2.jpg" style="width:100%">
     	</div>
-	<
+	
 
 	<div class="mySlides">
 		<div class="numbertext">3 / 4</div>
@@ -57,19 +57,19 @@
 	</div>
 
 	<div class="column">
-		<img class="demo" src="../img/img1_small.jpg" onclick="currentSlide(1)" alt="Nature">
+		<img class="demo img_size" src="../img/img1_small.jpg" onclick="currentSlide(1)" alt="Nature">
 	</div>
 
 	<div class="column">
-		<img class="demo" src="../img/img2_small.jpg" onclick="currentSlide(2)" alt="Valley">
+		<img class="demo img_size" src="../img/img2_small.jpg" onclick="currentSlide(2)" alt="Valley">
 	</div>
 
 	<div class="column">
-		<img class="demo" src="../img/img3_small.jpg" onclick="currentSlide(3)" alt="Night Sky">
+		<img class="demo img_size" src="../img/img3_small.jpg" onclick="currentSlide(3)" alt="Night Sky">
 	</div>
 
 	<div class="column">
-		<img class="demo" src="../img/img4_small.jpg" onclick="currentSlide(4)" alt="Cloudy Sky">
+		<img class="demo img_size" src="../img/img4_small.jpg" onclick="currentSlide(4)" alt="Cloudy Sky">
 	</div>
 
 </div>
@@ -80,6 +80,44 @@
 <script>
 function openModal(){
 	document.getElementById('myModal').style.display = "block";
+}
+
+function closeModal(){
+	document.getElementById("myModal").style.display = "none"
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+
+function plusSlide(n){
+	showSlides(slideIndex += n);
+}
+
+function currentSlide(n){
+	showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
 }
 
 </script>
