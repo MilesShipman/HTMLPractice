@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Filtering </title>
+	<link rel="stylesheet" href="../css/filtering.css">
+</head>
+
+<body>
+
+<div class="filter_list">
+
+	<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Name">
+
+
+	<ul id="myUL">
+
+		<li><a href="#" class="header">A</a></li>
+		<li><a href="#">Adele</a></li>
+		<li><a href="#">Agnes</a></li>
+
+		<li><a href="#" class="header">B</a></li>
+		<li><a href="#">Billy</a></li>
+		<li><a href="#">Bob</a></li>
+
+		<li><a href="#" class="header">C</a></li>
+		<li><a href="#">Calvin</a></li>
+		<li><a href="#">Christinia</a></li>
+		<li><a href="#">Cindy</a></li>
+
+	</ul>
+</div>
+
+<br><br><br>
+
+
+<script>
+
+function myFunction(){
+	//Declare ALL the Variables
+	var input, filter, ul, li, a, i;
+	input = document.getElementById('myInput');
+	filter = input.value.toUpperCase();
+	ul = document.getElementById("myUL");
+	li = ul.getElementsByTagName("li");
+
+	//Loop through all the items
+	for(i = 0; i < li.length; i++){
+		a = li[i].getElementsByTagName("a")[0];
+		if(a.innerHTML.toUpperCase().indexOf(filter) > -1){
+			li[i].style.display = "";
+		}else{
+			li[i].style.display="none";
+		}
+	}
+}
+
+</script>
+
+
+</body>
+</html>
